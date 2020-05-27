@@ -1,0 +1,39 @@
+html {
+    background: url(../images/imgBackground.png) bottom center;
+    background-size: cover;    
+    font-family: 'Lacquer', serif ;
+  }
+  .images {  
+    display: flex;  
+    justify-content: center; 
+    align-items: center;  
+    /* border: 1px solid black;   */
+  }
+  .image {  
+    margin: 1rem;  
+  }
+  .newImgs{
+    position: relative; 
+    width: 10rem; 
+    margin: auto 1vw;
+  }
+  .newDivImgs{
+    display: flex;  
+    justify-content: center; 
+    align-items: center;  
+    /* border: 1px solid black;   */
+  }
+  .score{
+    color: rgb(110, 255, 90);
+    width: 6rem;
+  }
+  .winText{
+    text-align: center;
+    color:rgb(106, 255, 0);
+    font-size: 4rem;
+  }
+  .loseText{
+    text-align: center;
+    color:rgb(243, 18, 2);
+  }
+  
