@@ -1,25 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-//     if(ctrUser>ctrComputer){
-//         console.log(`\nGame over\nYou won, score: ${ctrUser}-${ctrComputer}`);
-//     }else if(ctrUser< ctrComputer){
-//         console.log(`\nGame over\nYou lose, score: ${ctrUser}-${ctrComputer}`);
-//     }else if(ctrUser===ctrComputer){
-//         console.log(`\nGame over\nEquality, score: ${ctrUser}-${ctrComputer}`);
-//     }
-
-// }
-// game();
-
-
 const newDiv = document.querySelector('.newDivImgs');
 const imgs = document.querySelectorAll('img');
 const winText = document.querySelector('.winText');
@@ -32,8 +10,6 @@ let computerScore;
 
 let ctrUser = 0;
 let ctrComputer = 0;
-let x = [];
-
 
 imgs.forEach((img) => {
 img.addEventListener('click', (e) =>{
@@ -51,56 +27,112 @@ img.addEventListener('click', (e) =>{
     }   
     if(playerSelection == 'rock' && computerSelection == 'paper'){
         newUserImg.setAttribute('src', `images/img${playerSelection}.png`);
-        comparisonImg.setAttribute('src', 'images/imgLower.png');
-        newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);
-        ctrComputer++;      
+        
+        quickSlide(newComputerImg);
+        setTimeout(() => {
+            comparisonImg.setAttribute('src', 'images/imgLower.png');  
+            newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);            
+         }, 1200);
+         ctrComputer++;
+        
+              
     }else if(playerSelection == 'rock' && computerSelection == 'scissors'){
         newUserImg.setAttribute('src', `images/img${playerSelection}.png`);
-        comparisonImg.setAttribute('src', 'images/imgGreater.png');
-        newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);
-        ctrUser++;
+        
+        quickSlide(newComputerImg);
+        setTimeout(() => {  
+            comparisonImg.setAttribute('src', 'images/imgGreater.png');
+            newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);            
+         }, 1200);
+         ctrUser++;
     }else if(playerSelection == 'rock' && computerSelection == 'rock'){
         newUserImg.setAttribute('src', `images/img${playerSelection}.png`);
-        comparisonImg.setAttribute('src', 'images/imgEquality.png');
-        newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);     
+        
+        quickSlide(newComputerImg);
+        setTimeout(() => { 
+            comparisonImg.setAttribute('src', 'images/imgEquality.png'); 
+            newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);
+         }, 1200);     
     }else if(playerSelection == 'paper' && computerSelection == 'scissors'){
         newUserImg.setAttribute('src', `images/img${playerSelection}.png`);
-        comparisonImg.setAttribute('src', 'images/imgLower.png');
-        newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);  
-        ctrComputer++;
+        
+        quickSlide(newComputerImg);
+        setTimeout(() => { 
+            comparisonImg.setAttribute('src', 'images/imgLower.png'); 
+            newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);            
+         }, 1200);  
+         ctrComputer++;
     }else if(playerSelection == 'paper' && computerSelection == 'rock'){
         newUserImg.setAttribute('src', `images/img${playerSelection}.png`);
-        comparisonImg.setAttribute('src', 'images/imgGreater.png');
-        newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);
-        ctrUser++;
+        
+        quickSlide(newComputerImg);
+        setTimeout(() => { 
+            comparisonImg.setAttribute('src', 'images/imgGreater.png'); 
+            newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);            
+         }, 1200);
+         ctrUser++;
     }else if(playerSelection == 'paper' && computerSelection == 'paper'){
         newUserImg.setAttribute('src', `images/img${playerSelection}.png`);
-        comparisonImg.setAttribute('src', 'images/imgEquality.png');
-        newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);         
+        
+        quickSlide(newComputerImg);
+        setTimeout(() => { 
+            comparisonImg.setAttribute('src', 'images/imgEquality.png');
+            newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);
+         }, 1200);         
     }else if(playerSelection == 'scissors' && computerSelection == 'rock'){
         newUserImg.setAttribute('src', `images/img${playerSelection}.png`);
-        comparisonImg.setAttribute('src', 'images/imgLower.png');
-        newComputerImg.setAttribute('src', `images/img${computerSelection}.png`); 
-        ctrComputer++;
+        
+        quickSlide(newComputerImg);
+        setTimeout(() => {  
+            comparisonImg.setAttribute('src', 'images/imgLower.png');
+            newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);            
+         }, 1200); 
+         ctrComputer++;
     }else if(playerSelection == 'scissors' && computerSelection == 'paper'){
         newUserImg.setAttribute('src', `images/img${playerSelection}.png`);
-        comparisonImg.setAttribute('src', 'images/imgGreater.png');
-        newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);
-        ctrUser++;
+        
+        quickSlide(newComputerImg);
+        setTimeout(() => {  
+            comparisonImg.setAttribute('src', 'images/imgGreater.png');
+            newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);            
+         }, 1200);
+         ctrUser++;
     }else if(playerSelection == 'scissors' && computerSelection == 'scissors'){
         newUserImg.setAttribute('src', `images/img${playerSelection}.png`);
-        comparisonImg.setAttribute('src', 'images/imgEquality.png');
-        newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);        
+        
+        quickSlide(newComputerImg);
+        setTimeout(() => { 
+            comparisonImg.setAttribute('src', 'images/imgEquality.png'); 
+            newComputerImg.setAttribute('src', `images/img${computerSelection}.png`);
+         }, 1200);        
     }   
     
     newUserImg.setAttribute('class', 'newImgs');
     comparisonImg.setAttribute('class', 'newImgs');
     newComputerImg.setAttribute('class', 'newImgs');
 
-    userScore.textContent = 'Your score: ' + ctrUser;
-    computerScore.textContent = 'Computer score: ' + ctrComputer;
-    userScore.setAttribute('class', 'score');
-    computerScore.setAttribute('class', 'score');
+
+    setTimeout(() => {  
+        userScore.textContent = 'Your score: ' + ctrUser;
+        computerScore.textContent = 'Computer score: ' + ctrComputer;
+        userScore.setAttribute('class', 'score');
+        computerScore.setAttribute('class', 'score');
+
+        if (ctrUser > 4){
+            winText.textContent = 'WIN';
+            winText.setAttribute('class', 'winText');        
+            ctrUser = 0;
+            ctrComputer = 0;           
+        }else if (ctrComputer > 4){
+            winText.textContent = 'lose';
+            winText.setAttribute('class', 'loseText');        
+            ctrUser = 0;
+            ctrComputer = 0;
+            
+        }
+     }, 1200);
+
+    
 
     newDiv.appendChild(userScore);
     newDiv.appendChild(newUserImg);
@@ -108,20 +140,7 @@ img.addEventListener('click', (e) =>{
     newDiv.appendChild(newComputerImg);
     newDiv.appendChild(computerScore);
 
-    if (ctrUser > 4){
-        winText.textContent = 'You Win';
-        winText.setAttribute('class', 'winText');        
-        ctrUser = 0;
-        ctrComputer = 0;
     
-        
-    }else if (ctrComputer > 4){
-        winText.textContent = 'you lose';
-        winText.setAttribute('class', 'loseText');        
-        ctrUser = 0;
-        ctrComputer = 0;
-        
-    }
 
     });
 });
@@ -132,3 +151,13 @@ let randVal = game_Values[Math.floor(Math.random()*3)];
 return randVal;
 }
 
+function quickSlide(image) {    
+    for(let i = 0; i < 15; i++){   
+        let imgLinks = ['images/imgrock.png', 'images/imgpaper.png','images/imgscissors.png'];          
+    setTimeout(function(){ 
+        image.setAttribute('src', `${imgLinks[i%3]}`);
+        
+    }, i * 80);    
+    };
+};
+    
